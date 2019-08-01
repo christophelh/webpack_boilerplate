@@ -11,13 +11,27 @@ module.exports = {
                 minimize: true
               }
             }],
-          }]
+          },
+        
+          {
+            test: /\.(png|jpe?g|gif)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {},
+              },
+            ],
+          },
+        
+        
+        ]
     },
 
   plugins: [
     new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./index.html",
         filename: "./index.html"
-    })
+    }
+)
   ]
 }
